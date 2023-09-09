@@ -2,7 +2,6 @@ import random
 import re
 
 number_str = str(random.randint(0, 9)) + str(random.randint(0, 9)) + str(random.randint(0, 9)) + str(random.randint(0, 9))
-#print(number_str)
 success = bool(0)
 
 while success == False:
@@ -22,7 +21,6 @@ while success == False:
         if (player_number_str[x] in number_str) and (player_number_str[x] not in temp) :
             temp.append(player_number_str[x])
             korova+=number_str.count(player_number_str[x])
-            #print("Коров найдено: ", number_str.count(player_number_str[x]))
         if number_str[x] == player_number_str[x]:
             bik+=1
 
