@@ -1,4 +1,3 @@
-import numpy as np
 from matplotlib import pyplot
 def f(x):
     return x**2

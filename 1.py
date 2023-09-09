@@ -7,7 +7,7 @@ success = bool(0)
 while success == False:
     valid_test = bool(0)
     while valid_test == False:
-        print("Введите 4ёх значое число:")
+        print("Введите 4-ёх значое число:")
         player_number_str = str(input())
         if re.fullmatch('\d\d\d\d', player_number_str):
             valid_test = True
