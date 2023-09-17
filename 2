@@ -15,8 +15,19 @@ def print_pole():
 
 def win_check(counter):
     temp = ("".join(string0) + "".join(string1) + "".join(string2))
-    print('5445',temp)
+    win = bool(0)
     if "OOO" in temp or "XXX" in temp:
+        win = True
+    for i in range(3):
+        if string0[i] == string1[i] == string2[i]:
+            win = True
+    if string0[0] == string1[1] == string2[2] or string0[3] == string1[1] == string2[0]:
+        win = True
+    if win == True:
+        if counter%2 == 0:
+            print("Победил первый игрок(Х)")
+        else:
+            print("Победил второй игрок(0)")
         return True
     else:
         return False
