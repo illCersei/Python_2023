@@ -66,9 +66,9 @@ def player_input(s,q):
     valid_enter = bool(0)
     while valid_enter != True:
         if q == 0:
-            print("Введите номер строки ")
+            print("Введите номер строки: ")
         else:
-            print("Введите номер столбца ")
+            print("Введите номер столбца: ")
         temp = input()
         if temp == '1' or temp == '2' or temp == '3':
             valid_enter = True
