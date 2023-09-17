@@ -1,0 +1,80 @@
+def start_game():
+    global string0, string1,string2
+    string0 = [""] * 7
+    string1 = [""] * 7
+    string2 = [""] * 7
+    print("Игра крестики и нолики на 3х3 поле." + '\n' +
+    "Вводить нужно координаты клетки, куда вы ставите свой знак." + '\n' +
+    "Первая координата - строка, вторая - столбец." + '\n' +
+    "Счёт строк и столбцов от 1 до 3 включительно."'\n')
+        
+def print_pole():
+    print("Ситуация на поле:")
+    print(" ".join(string0)+"\n"+" ".join(string1)+"\n"+" ".join(string2))
+
+
+def win_check(counter):
+    temp = ("".join(string0) + "".join(string1) + "".join(string2))
+    print('5445',temp)
+    if "OOO" in temp or "XXX" in temp:
+        return True
+    else:
+        return False
+
+                
+def player_turn(s,x,y):
+    match x:
+        case 0:
+            if string0[y] == "":
+                string0[y] = s
+                return True
+        case 1:
+            if string1[y] == "":
+                string1[y] = s
+                return True
+        case 2:
+            if string2[y] == "":
+                string2[y] = s  
+                return True 
+        case _:
+            return False
+        
+def player_input(q):
+    valid_enter = bool(0)
+    while valid_enter != True:
+        if q == 0:
+            print("Введите номер строки ")
+        else:
+            print("Введите номер столбца ")
+        n = int(input())
+        if n == 1 or n == 2 or n == 3:
+            valid_enter = True
+        else:
+            print("Ошибка ввода")
+    
+    return n-1
+        
+start_game()        
+counter = 0
+while(win_check(counter) == False):
+    check_movement = True
+    if counter%2 == 0:
+        s = 'X'
+    else:
+        s = 'O'
+
+    x = player_input(0)
+    y = player_input(1)
+
+    check_movement = player_turn(s,x,y)
+
+    if check_movement == True:
+        print_pole()
+        counter +=1
+    else:
+        print("Клетка уже занята, повторите ввод")
+        print_pole()
+
+                 
+
+
