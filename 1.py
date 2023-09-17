@@ -1,7 +1,7 @@
 import random
 import re
 
-number_str = str(random.randint(0, 9)) + str(random.randint(0, 9)) + str(random.randint(0, 9)) + str(random.randint(0, 9))
+#number_str = str(random.randint(0, 9)) + str(random.randint(0, 9)) + str(random.randint(0, 9)) + str(random.randint(0, 9))
 success = bool(0)
 
 while success == False:
