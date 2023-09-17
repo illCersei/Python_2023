@@ -58,13 +58,13 @@ def player_turn(s,x,y):
             return False
         
 def player_input(s,q):
-    match s:
-        case 'X':
-            print("Ходит первый игрок(Х)")
-        case _:
-            print("Ходит второй игрок(О)")
     valid_enter = bool(0)
     while valid_enter != True:
+        match s:
+            case 'X':
+                print("Ходит первый игрок(Х)")
+            case _:
+                print("Ходит второй игрок(О)")
         if q == 0:
             print("Введите номер строки: ")
         else:
